@@ -1,0 +1,38 @@
+fm.Input("SO_SITE_MOP_EXT", "TRUE")
+fm.Input("opcion_iv", "on")
+fm.Input("ORIGEN_VISUALIZAR", "Caracas (CCS), VE")
+fm.Input("ORIGEN", "CCS")
+fm.Input("DESTINO_VISUALIZAR", "Buenos Aires (EZE), AR")
+fm.Input("DESTINO", "EZE")
+fm.Input("fecha_desde", "02/02/2017")
+fm.Input("fecha_hasta", "09/02/2017")
+fm.Input("adultos", "1")
+fm.Input("ninos", "0")
+fm.Input("bebes", "0")
+
+<div class="divProfile"> <br>
+  <div id="WDSError">
+    
+    <table cellspacing="0" cellpadding="0" class="tableError">
+    <tbody><tr>
+      <td class="textBold" valign="top"><div class="ImgError">&nbsp;</div></td>
+      <td class="textNormal" width="100%"><div id="WDSErrorContainer" class=""><h1 style="font-size:120%;">Aviso importante</h1><ul><li class="WDSErrorE">No existe disponibilidad de asientos en la ruta seleccionada. Por favor modifique las fechas de su viaje. (66002 [977])</li></ul></div></td>
+    </tr>
+    </tbody></table>
+    
+  </div>
+
+
+
+
+
+<div id="WDSError" style="display:none">
+    
+    <table cellspacing="0" cellpadding="0" class="tableError">
+    <tbody><tr>
+      <td class="textBold" valign="top"><div class="ImgError">&nbsp;</div></td>
+      <td class="textNormal" width="100%"><div id="WDSErrorContainer" class=""></div></td>
+    </tr>
+    </tbody></table>
+    
+  </div>
