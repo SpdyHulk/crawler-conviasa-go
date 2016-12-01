@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 var (
 	//Origen Todos los Ciudades Aereas
 	Origen = map[string]string{
@@ -25,7 +21,3 @@ var (
 		"STD": "Santo Domingo del Táchira",
 	}
 )
-
-func init() {
-	fmt.Println("asd")
-}

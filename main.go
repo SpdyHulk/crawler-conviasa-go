@@ -32,17 +32,42 @@ func main() {
 	origen, _ := reader.ReadString('\n')
 	//Formatear entrada, eliminar espacios
 	origen = strings.TrimSpace(origen)
+	fmt.Println("===========================================")
 
-	browser.PostForm("https://wftc1.e-travel.com/plnext/Conviasa/Override.action", FormData)
-
-	browser.Find("form").Each(func(_ int, s *goquery.Selection) {
-		name, ok := s.Attr("name")
-		if ok {
-			if name == "form_select_fare" {
-				fmt.Println("Hay Disponibilidad, verifique la pagina")
-				return
-			}
+	if _, ok := Origen[origen]; ok {
+		for k, v := range Destino {
+			fmt.Printf("Codigo: %v  -  Ciudad: %v\n", k, v)
 		}
-	})
+		fmt.Print("Por favor, selecione el Destino: ")
+		destino, _ := reader.ReadString('\n')
+		destino = strings.TrimSpace(destino)
+		if _, ok := Destino[destino]; ok {
+			fmt.Print("Por favor, ingrese fecha de Salida: ")
+			fecha_salida, _ := reader.ReadString('\n')
+			fecha_salida = strings.TrimSpace(fecha_salida)
+			fmt.Print("Por favor, ingrese fecha de Regreso: ")
+			fecha_regreso, _ := reader.ReadString('\n')
+			fecha_regreso = strings.TrimSpace(fecha_regreso)
+			FormData.Add("B_LOCATION_1", origen)
+			FormData.Add("E_LOCATION_1", destino)
+			FormData.Add("B_LOCATION_2", destino)
+			FormData.Add("E_LOCATION_2", origen)
+			FormData.Add("ORIGEN", origen)
+			FormData.Add("DESTINO", destino)
+			//Solicitud Form Post
+			fmt.Println(FormData.Encode())
+			browser.PostForm("https://wftc1.e-travel.com/plnext/Conviasa/Override.action", FormData)
+			browser.Find("form").Each(func(_ int, s *goquery.Selection) {
+				name, ok := s.Attr("name")
+				if ok {
+					if name == "form_select_fare" {
+						fmt.Println("Hay Disponibilidad, verifique la pagina")
+						return
+					}
+				}
+			})
+		}
+	}
+
 	fmt.Println("No hay disponibilidad")
 }
