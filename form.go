@@ -33,7 +33,7 @@ func init() {
 	FormData.Add("PRICING_TYPE", "I")
 	FormData.Add("SEVEN_DAY_SEARCH", "TRUE")
 
-	FormData.Add("B_DATE_1", "201712151200")
+	FormData.Add("B_DATE_1", "201612151200")
 	FormData.Add("B_DATE_2", "201612210000")
 	FormData.Add("TRAVELLER_TYPE_1", "ADT")
 	FormData.Add("TRAVELLER_TYPE_2", "")

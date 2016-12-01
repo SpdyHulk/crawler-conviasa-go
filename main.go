@@ -55,7 +55,6 @@ func main() {
 			FormData.Add("ORIGEN", origen)
 			FormData.Add("DESTINO", destino)
 			//Solicitud Form Post
-			fmt.Println(FormData.Encode())
 			browser.PostForm("https://wftc1.e-travel.com/plnext/Conviasa/Override.action", FormData)
 			browser.Find("form").Each(func(_ int, s *goquery.Selection) {
 				name, ok := s.Attr("name")
@@ -68,6 +67,4 @@ func main() {
 			})
 		}
 	}
-
-	fmt.Println("No hay disponibilidad")
 }
