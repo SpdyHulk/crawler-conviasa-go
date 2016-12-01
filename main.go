@@ -54,6 +54,8 @@ func main() {
 			FormData.Add("E_LOCATION_2", origen)
 			FormData.Add("ORIGEN", origen)
 			FormData.Add("DESTINO", destino)
+			FormData.Add("B_DATE_1", fecha_salida+"1200")
+			FormData.Add("B_DATE_2", fecha_regreso+"0000")
 			//Solicitud Form Post
 			browser.PostForm("https://wftc1.e-travel.com/plnext/Conviasa/Override.action", FormData)
 			browser.Find("form").Each(func(_ int, s *goquery.Selection) {
